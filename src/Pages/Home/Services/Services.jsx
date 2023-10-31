@@ -1,18 +1,21 @@
-import { data } from "autoprefixer";
-import { useEffect, useState } from "react";
+// import { data } from "autoprefixer";
+// import { useEffect, useState } from "react";
+import useServices from "../../../hooks/useServices";
 import ServiceCard from "./ServiceCard";
 
-
+// DRY --> Donot Repeat Yourself
 const Services = () => {
-    const [services, setServices] = useState([]);
+    const services = useServices();
 
-    useEffect(() =>{
-        fetch('http://localhost:5000/services')
-        .then(res => res.json())
-        .then(data => {
-           setServices(data);
-        })
-    }, [])
+    // const [services, setServices] = useState([]);
+
+    // useEffect(() =>{
+    //     fetch('http://localhost:5000/services')
+    //     .then(res => res.json())
+    //     .then(data => {
+    //        setServices(data);
+    //     })
+    // }, [])
 
     return (
         <div className="mt-4">
